@@ -1,3 +1,3 @@
-name: Bruch's Home Assistant add-ons
-url: 'https://github.com/thiagobruch/HA_Addon'
-maintainer: Thiago Bruch
+name: DE's Fork of Bruch's Home Assistant add-ons
+url: 'https://github.com/DavidEmmel/HA_Addon'
+maintainer: DE for Thiago Bruch
