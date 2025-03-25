@@ -107,8 +107,8 @@ do {
 		sleep(1500, function() {
 			// delay
 		});
-    		const filename = `00-screenshot_debug_ua2.png`;
-        	await page.screenshot({ path: filename, fullPage: true });
+    		const filename2 = `00-screenshot_debug_ua2.png`;
+        	await page.screenshot({ path: filename2, fullPage: true });
         }
         //// END DEBUG ////
 // end check user agent
