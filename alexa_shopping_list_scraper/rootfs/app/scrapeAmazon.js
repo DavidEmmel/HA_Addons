@@ -8,6 +8,7 @@ require('dotenv').config();
 const puppeteer = require('puppeteer-extra')
 
 // add stealth plugin and use defaults (all evasion techniques)
+// https://www.npmjs.com/package/puppeteer-extra-plugin-stealth
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 puppeteer.use(StealthPlugin())
 
