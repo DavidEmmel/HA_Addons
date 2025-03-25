@@ -101,15 +101,13 @@ do {
 		sleep(1500, function() {
 			// delay
 		});
-		const timestamp = getTimestamp();
-    		const filename = `www/${timestamp}-00-screenshot_debug_ua.png`;
+		const filename = `00-screenshot_debug_ua.png`;
         	await page.screenshot({ path: filename, fullPage: true });
 		await page.goto('https://www.whatismybrowser.com', { waitUntil: 'load', timeout: 60000 });
 		sleep(1500, function() {
 			// delay
 		});
-		const timestamp = getTimestamp();
-    		const filename = `www/${timestamp}-00-screenshot_debug_ua2.png`;
+    		const filename = `00-screenshot_debug_ua2.png`;
         	await page.screenshot({ path: filename, fullPage: true });
         }
         //// END DEBUG ////
