@@ -1,4 +1,4 @@
-# Amazon Shopping List Scraper
+# Amazon Shopping List Scraper DE
 ** This project is based on (https://github.com/jtbnz/amazon_shopping_list/) by https://github.com/jtbnz **
 
 The project scrapes the Amazon Shopping List page and add the items to the Home Assistant Shopping List (todo list) every 3 minutes.
