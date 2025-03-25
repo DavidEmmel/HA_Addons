@@ -86,22 +86,43 @@ async function getOTP(secret) {
 //        dumpio: true,
           });
 
-    const page = await browser.newPage();
-        page.setDefaultTimeout(60000); // 60 seconds
+	const page = await browser.newPage();
+	page.setDefaultTimeout(60000); // 60 seconds
 
+	// check user agent during debug
+	//// DEBUG ////////
+        if(log_level == "true"){
+		await page.goto('https://www.whatismybrowser.com/detect/what-is-my-user-agent/', { waitUntil: 'load', timeout: 60000 });
+		sleep(1500, function() {
+			// delay
+		});
+		const timestamp = getTimestamp();
+    		const filename = `www/${timestamp}-00-screenshot_debug_ua.png`;
+        	await page.screenshot({ path: filename, fullPage: true });
+		await page.goto('https://www.whatismybrowser.com', { waitUntil: 'load', timeout: 60000 });
+		sleep(1500, function() {
+			// delay
+		});
+		const timestamp = getTimestamp();
+    		const filename = `www/${timestamp}-00-screenshot_debug_ua2.png`;
+        	await page.screenshot({ path: filename, fullPage: true });
+        }
+        //// END DEBUG ////
+// end check user agent
+	
 // start loop code
 let elementExists = false;
 do {
 //    Navigate to Amazon login page
 //    await page.goto('https://www.amazon.com/ap/signin?openid.pape.max_auth_age=3600&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Falex>
 
-//// Get teh main amaozn page ////
+//// Get the main amazon page ////
 const url = amz_signin_url;
 const parts = url.split('/');
 const result = parts.slice(0, 3).join('/');
 //console.log(result); 
 
-//// END Get teh main amaozn page ////
+//// END Get the main amazon page ////
 	
     await page.goto(result, { waitUntil: 'load', timeout: 60000 });
     sleep(1500, function() {
