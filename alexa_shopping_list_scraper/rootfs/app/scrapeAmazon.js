@@ -89,7 +89,12 @@ async function getOTP(secret) {
 	const page = await browser.newPage();
 	page.setDefaultTimeout(60000); // 60 seconds
 
-	// check user agent during debug
+
+// start loop code
+let elementExists = false;
+do {
+
+		// check user agent during debug
 	//// DEBUG ////////
         if(log_level == "true"){
 		await page.goto('https://www.whatismybrowser.com/detect/what-is-my-user-agent/', { waitUntil: 'load', timeout: 60000 });
@@ -110,10 +115,9 @@ async function getOTP(secret) {
         //// END DEBUG ////
 // end check user agent
 	
-// start loop code
-let elementExists = false;
-do {
-//    Navigate to Amazon login page
+	
+	
+	//    Navigate to Amazon login page
 //    await page.goto('https://www.amazon.com/ap/signin?openid.pape.max_auth_age=3600&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Falex>
 
 //// Get the main amazon page ////
